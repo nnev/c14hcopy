@@ -3,5 +3,5 @@ Description = Copies all files from today off the camera
 
 [Service]
 Type = oneshot
-EnvironmentFile = /etc/nnev-c14hcopy/config.env
+EnvironmentFile = /etc/c14hcopy/config.env
 ExecStart = /usr/local/sbin/c14hcopy-%i.sh
