@@ -1,4 +1,4 @@
 # CAM
-SUBSYSTEMS=="usb", ENV{ID_FS_LABEL}=="JVCCAM_SD", ACTION=="add", RUN+="/bin/sh -c 'TERM=linux echo JVCCAM found. starting copy. > /dev/tty1'", RUN+="/bin/mount '%E{DEVNAME}' /mnt/cam", RUN+="/bin/systemctl start c14hcopy@cam"
+SUBSYSTEMS=="usb", ENV{ID_FS_LABEL}=="JVCCAM_SD", ACTION=="add", RUN+="/bin/sh -c 'echo JVCCAM found. starting copy. > /irc/chaos-hd'", RUN+="/bin/mount '%E{DEVNAME}' /mnt/cam", RUN+="/bin/sh -c '/bin/systemctl start c14hcopy@cam 2> /irc/chaos-hd'"
 # MIC
-SUBSYSTEMS=="usb", ENV{ID_FS_LABEL}=="ZOOM", ACTION=="add", RUN+="/bin/sh -c 'TERM=linux echo ZOOM MIC found. starting copy. > /dev/tty1'", RUN+="/bin/mount '%E{DEVNAME}' /mnt/mic", RUN+="/bin/systemctl start c14hcopy@mic"
+SUBSYSTEMS=="usb", ENV{ID_FS_LABEL}=="ZOOM", ACTION=="add", RUN+="/bin/sh -c 'echo ZOOM MIC found. starting copy. > /irc/chaos-hd'", RUN+="/bin/mount '%E{DEVNAME}' /mnt/mic", RUN+="/bin/sh -c '/bin/systemctl start c14hcopy@mic 2> /irc/chaos-hd'"
