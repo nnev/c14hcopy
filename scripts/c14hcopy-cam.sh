@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+echo JVCCAM found. starting copy. > /irc/chaos-hd
 CPYDIR="${TMPDIR?}"/$(date --iso-8601)
 mkdir -p "$CPYDIR"
 find "$CAMDIR" -mindepth 1 -mtime -1 -execdir cp '{}' "$CPYDIR" ';'

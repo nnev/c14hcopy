@@ -1,4 +1,4 @@
 # CAM
-SUBSYSTEMS=="usb", ENV{ID_SERIAL}=="JVCKWD_GZ-R315_000000001280-0:0", ENV{ID_FS_LABEL}=="JVCCAM_SD", ACTION=="add", RUN+="/bin/sh -c 'echo JVCCAM found. starting copy. > /irc/chaos-hd'", RUN+="/bin/mount '%E{DEVNAME}' /mnt/cam", RUN+="/bin/sh -c '/bin/systemctl start c14hcopy@cam 2> /irc/chaos-hd'"
+SUBSYSTEMS=="usb", ENV{ID_SERIAL}=="JVCKWD_GZ-R315_000000001280-0:0", ENV{ID_FS_LABEL}=="JVCCAM_SD", ACTION=="add", RUN+="/bin/sh -c '/bin/mount %E{DEVNAME} /mnt/mic && /bin/systemctl start c14hcopy@cam 2> /irc/chaos-hd'"
 # MIC
-SUBSYSTEMS=="usb", ENV{ID_SERIAL}=="ZOOM_H2n_SD_R_W_000000000000-0:0", ACTION=="add", RUN+="/bin/sh -c 'echo ZOOM MIC found. starting copy. > /irc/chaos-hd'", RUN+="/bin/mount '%E{DEVNAME}' /mnt/mic", RUN+="/bin/sh -c '/bin/systemctl start c14hcopy@mic 2> /irc/chaos-hd'"
+SUBSYSTEMS=="usb", ENV{ID_SERIAL}=="ZOOM_H2n_SD_R_W_000000000000-0:0", ACTION=="add", RUN+="/bin/sh -c '/bin/mount %E{DEVNAME} /mnt/mic && /bin/systemctl start c14hcopy@mic 2> /irc/chaos-hd'"
